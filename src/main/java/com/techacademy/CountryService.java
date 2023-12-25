@@ -30,7 +30,7 @@ public class CountryService {
 	}
 	//更新（追加）を行う
 	@Transactional
-	public void update(String code, String name, int population) {
+	public void updateCountry(String code, String name, int population) {
 		Country country = new Country(code,name,population);
 		repository.save(country);
 	}
@@ -39,5 +39,7 @@ public class CountryService {
 	public void deleteCountry(String code) {
 		repository.deleteById(code);
 	}
+
+
 
 }
