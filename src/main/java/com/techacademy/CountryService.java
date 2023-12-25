@@ -7,8 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CountryService {
+	private final CountryRepository repository;
+
 	@Autowired
-	private CountryRepository repository;
+	public CountryService(CountryRepository repository) {
+		this.repository= repository;
+	}
 
 	//全件検索して返し
 	public List<Country> getCountryList(){
